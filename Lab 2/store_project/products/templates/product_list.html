@@ -1,0 +1,11 @@
+<h1>All Products</h1>
+<ul>
+  {% for product in products %}
+    <li>
+      <a href="/products/{{ product.id }}/">{{ product.title }}</a> -
+      ${{ product.price }} -
+      Category: <a href="/categories/{{ product.category.id }}/">{{ product.category.name }}</a>
+    </li>
+  {% endfor %}
+</ul>
+<a href="/products/new/">Add New Product</a>

@@ -1,0 +1,9 @@
+<h1>{{ product.title }}</h1>
+<p>Description: {{ product.description }}</p>
+<p>Price: {{ product.price }}</p>
+<p>Available: {{ product.available }}</p>
+<p>Created at: {{ product.created_at }}</p>
+<p>Category: {{ product.category.name }}</p>
+<form method="post" action="/products/{{ product.id }}/delete/">{% csrf_token %}
+  <button type="submit">Delete</button>
+</form>

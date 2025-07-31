@@ -1,0 +1,12 @@
+<h1>Category: {{ category.name }}</h1>
+<p>{{ category.description }}</p>
+
+<ul>
+  {% for product in products %}
+    <li><a href="/products/{{ product.id }}/">{{ product.title }}</a></li>
+  {% endfor %}
+</ul>
+
+<form method="post" action="/categories/{{ category.id }}/delete/">{% csrf_token %}
+  <button type="submit">Delete Category</button>
+</form>
