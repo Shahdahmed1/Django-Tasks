@@ -1,0 +1,15 @@
+<h1>Your Tasks</h1>
+
+<a href="{% url 'task_create' %}">+ Add New Task</a>
+
+<ul>
+  {% for task in tasks %}
+    <li>
+      <strong>{{ task.title }}</strong> - {{ task.status }}
+      <br>
+      <img src="{{ task.image.url }}" width="100" height="100">
+    </li>
+  {% empty %}
+    <li>No tasks found.</li>
+  {% endfor %}
+</ul>

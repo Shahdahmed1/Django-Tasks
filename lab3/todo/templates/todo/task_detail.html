@@ -1,0 +1,8 @@
+<h2>{{ task.title }}</h2>
+<p>{{ task.description }}</p>
+<p>Status: {{ task.status }}</p>
+<img src="{{ task.image.url }}" width="200">
+<p>Assigned to: {{ task.assigned_to.username }}</p>
+
+<a href="{% url 'task_update' task.pk %}">Edit</a> |
+<a href="{% url 'task_delete' task.pk %}">Delete</a>

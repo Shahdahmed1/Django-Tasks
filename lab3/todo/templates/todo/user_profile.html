@@ -1,0 +1,11 @@
+<h2>{{ user_obj.username }}'s Profile</h2>
+
+<ul>
+  {% for task in tasks %}
+    <li>
+      <a href="{% url 'task_detail' task.pk %}">{{ task.title }}</a> - {{ task.status }}
+    </li>
+  {% empty %}
+    <li>No tasks found.</li>
+  {% endfor %}
+</ul>
